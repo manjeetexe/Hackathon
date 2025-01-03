@@ -1,0 +1,28 @@
+{
+  "name": "socia-media-analytics-backend",
+  "version": "1.0.0",
+  "main": "Server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@astrajs/collections": "^0.3.4",
+    "@datastax/astra-db-ts": "^1.5.0",
+    "@stargate-oss/stargate-grpc-node-client": "^0.2.3",
+    "axios": "^1.7.9",
+    "body-parser": "^1.20.3",
+    "cassandra-driver": "^4.7.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}
