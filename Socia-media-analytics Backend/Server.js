@@ -18,6 +18,7 @@ const db = client.db(process.env.ASTRA_DB_URL);
 
 // Initialize Express app
 const app = express();
+
 app.use(cors());
 app.use(express.json());
 
