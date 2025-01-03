@@ -25,30 +25,7 @@ app.use(express.json());
 // Collection name
 const collectionName = 'posts';
 
-// Ensure the `posts` collection exists only if it doesn't already exist
-const checkCollectionExistence = async () => {
-  try {
-    const collections = await db.listCollections();
 
-    if (!collections.includes(collectionName)) {
-      console.log(`Creating collection: ${collectionName}`);
-      await db.createCollection(collectionName);
-    } else {
-      console.log(`Collection '${collectionName}' already exists. Skipping creation.`);
-    }
-  } catch (error) {
-    // If the collection already exists, we'll handle it gracefully and not terminate the process
-    if (error.message.includes('CollectionAlreadyExistsError')) {
-      console.log(`Collection '${collectionName}' already exists.`);
-    } else {
-      console.error('Error checking or creating collection:', error);
-      process.exit(1);
-    }
-  }
-};
-
-// Check the collection existence when the server starts
-checkCollectionExistence();
 
 // Route to save data
 app.post('/api/save-post', async (req, res) => {
