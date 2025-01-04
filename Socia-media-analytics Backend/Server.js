@@ -5,22 +5,25 @@ const dotenv = require('dotenv');
 const router = require('./Routes/PostRoute');
 const langflowRoutes = require('./Routes/LangflowRoute');
 
-// Load environment variables
+
 dotenv.config();
 
 // Initialize Express app
 const app = express();
-app.use(cors());
+const corsOptions = {
+  origin: process.env.Frontend_API_URL,  
+  methods: 'GET, POST, PUT, DELETE',  
+  allowedHeaders: 'Content-Type, Authorization',  
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 
 
 app.use(langflowRoutes);
 
-
-
-
-// Use routes
 app.use(router);
+
 
 // Start the server
 const PORT = process.env.PORT || 8000;
