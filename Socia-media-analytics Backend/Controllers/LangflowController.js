@@ -8,6 +8,7 @@ const runModel = async (req, res) => {
 
         // Extract postType from the request body and use it as input_value
         const { postType } = req.body;
+        console.log("Request Body:", postType)
 
         // Validate postType
         if (!postType) {
