@@ -3,10 +3,8 @@ const { API_TOKEN, LANGFLOW_API_URL } = require('./../Config/LangflowConfig');
 
 const runModel = async (req, res) => {
     try {
-        // Log the request body for debugging
-        console.log("Request Body:", req.body);
 
-        // Extract postType from the request body and use it as input_value
+
         const { postType } = req.body;
         console.log("Request Body:", postType)
 
